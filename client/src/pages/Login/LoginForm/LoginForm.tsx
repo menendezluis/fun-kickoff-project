@@ -6,6 +6,8 @@ import CircularProgress from '@mui/material/CircularProgress';
 import { Formik, FormikHelpers } from 'formik';
 import * as Yup from 'yup';
 import useStyles from './useStyles';
+import TextInput from '../../../components/TextInput';
+import InputLabel from '@mui/material/InputLabel';
 
 interface Props {
   handleSubmit: (
@@ -46,7 +48,7 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
     >
       {({ handleSubmit, handleChange, values, touched, errors, isSubmitting }) => (
         <form onSubmit={handleSubmit} className={classes.form} noValidate>
-          <TextField
+          {/* <TextField
             id="email"
             label={<Typography className={classes.label}>E-mail address</Typography>}
             fullWidth
@@ -84,8 +86,37 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
             value={values.password}
             onChange={handleChange}
           />
+          */}
+          <InputLabel shrink htmlFor="bootstrap-input">
+            <Typography fontWeight="fontWeightBold" variant="button" display="block" gutterBottom>
+              {' '}
+              Email Address
+            </Typography>
+          </InputLabel>
+          <TextInput />
+          <InputLabel shrink htmlFor="bootstrap-input">
+            <Typography fontWeight="fontWeightBold" variant="button" display="block" gutterBottom>
+              {' '}
+              Password
+            </Typography>
+          </InputLabel>
+          <TextInput />
+
           <Box textAlign="center" marginTop={5}>
-            <Button type="submit" size="large" variant="contained" color="primary" className={classes.submit}>
+            <Button
+              type="submit"
+              size="large"
+              variant="contained"
+              color="secondary"
+              className={classes.submit}
+              style={{
+                borderRadius: 5,
+                backgroundColor: '#f14140',
+                padding: '18px 36px',
+                fontSize: '18px',
+                marginTop: '20px',
+              }}
+            >
               {isSubmitting ? <CircularProgress style={{ color: 'white' }} /> : 'Login'}
             </Button>
           </Box>

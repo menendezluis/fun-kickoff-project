@@ -17,6 +17,20 @@ const useStyles = makeStyles(() => ({
     color: '#000000',
     fontWeight: 700,
   },
+  label: {
+    color: '#0ff',
+    fontSize: 14,
+    fontWeight: 700,
+    marginBottom: 20,
+  },
+  inputs: {
+    color: '#f0f',
+    fontSize: 14,
+    fontWeight: 700,
+  },
+  inputLabelNoShrink: {
+    transform: 'translate(32px, 24px) scale(1)',
+  },
 }));
 
 export default useStyles;
