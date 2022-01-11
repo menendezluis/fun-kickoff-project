@@ -45,17 +45,27 @@ export default function Login(): JSX.Element {
           flexDirection="column"
           className={classes.authWrapper}
         >
-          <AuthHeader linkTo="/signup" asideText="Don't have an account?" btnText="Create account" />
-          <Paper style={{ display: 'block', margin: 'auto', width: '40%' }} elevation={2}>
-            <Box width="100%" maxWidth={450} p={3}>
-              <Grid container>
-                <Grid item xs>
-                  <Typography align="center" className={classes.welcome} component="h1" variant="h6">
-                    Login
-                  </Typography>
-                </Grid>
-              </Grid>
-              <LoginForm handleSubmit={handleSubmit} />
+          <Paper
+            style={{ display: 'block', margin: 'auto', width: '60%', justifyItems: 'center', justifyContent: 'center' }}
+            elevation={2}
+          >
+            <Box
+              width="100%"
+              maxWidth={450}
+              p={3}
+              display="flex"
+              flexDirection="column"
+              justifyContent="center"
+              alignItems="center"
+              minHeight="100vh"
+            >
+              <Typography align="center" ml={10} className={classes.welcome} component="h1" variant="h6">
+                Login
+              </Typography>
+              <Box mt={3} justifyContent="center" ml={15}>
+                <LoginForm handleSubmit={handleSubmit} />
+                <AuthHeader linkTo="/signup" asideText="Don't have an account?" btnText="Create account" />
+              </Box>
             </Box>
           </Paper>
           <Box p={1} alignSelf="center" />

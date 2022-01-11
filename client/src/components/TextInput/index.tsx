@@ -20,6 +20,19 @@ const grey = {
   900: '#1A2027',
 };
 
+const white = {
+  50: '#FDFDFD',
+  100: '#F6F6F6',
+  200: '#EFEFEF',
+  300: '#E0E0E0',
+  400: '#CFCFCF',
+  500: '#B2B2B2',
+  600: '#8C8C8C',
+  700: '#606060',
+  800: '#434343',
+  900: '#272727',
+};
+
 const StyledInputElement = styled('input')(
   ({ theme }) => `
   width: 320px;
@@ -28,14 +41,14 @@ const StyledInputElement = styled('input')(
   font-weight: 400;
   line-height: 1.5;
   color: ${theme.palette.mode === 'dark' ? grey[300] : grey[900]};
-  background: ${theme.palette.mode === 'dark' ? grey[900] : grey[50]};
+  background: ${theme.palette.mode === 'dark' ? white[100] : white[50]};
   border: 1px solid ${theme.palette.mode === 'dark' ? grey[800] : grey[300]};
-  border-radius: 8px;
+  border-radius: 5px;
   padding: 12px 12px;
   transition: all 150ms ease;
 
   &:hover {
-    background: ${theme.palette.mode === 'dark' ? null : grey[100]};
+    background: ${theme.palette.mode === 'dark' ? null : white[100]};
     border-color: ${theme.palette.mode === 'dark' ? grey[600] : grey[400]};
   }
 
@@ -58,6 +71,11 @@ const CustomInput = React.forwardRef(function CustomInput(
   );
 });
 
-export default function TextInput() {
-  return <CustomInput aria-label="Demo input" placeholder="Type something..." />;
+interface textHolder {
+  text: string;
+}
+
+export default function TextInput(textHolder: { text: any }) {
+  const { text } = textHolder;
+  return <CustomInput aria-label="Demo input" placeholder={text} />;
 }

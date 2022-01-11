@@ -87,20 +87,20 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
             onChange={handleChange}
           />
           */}
-          <InputLabel shrink htmlFor="bootstrap-input">
+          <InputLabel shrink htmlFor="bootstrap-input" style={{ color: 'black' }}>
             <Typography fontWeight="fontWeightBold" variant="button" display="block" gutterBottom>
               {' '}
               Email Address
             </Typography>
           </InputLabel>
-          <TextInput />
-          <InputLabel shrink htmlFor="bootstrap-input">
+          <TextInput text={'Your email'} />
+          <InputLabel shrink htmlFor="bootstrap-input" style={{ color: 'black' }}>
             <Typography fontWeight="fontWeightBold" variant="button" display="block" gutterBottom>
               {' '}
               Password
             </Typography>
           </InputLabel>
-          <TextInput />
+          <TextInput text={'Your Password'} />
 
           <Box textAlign="center" marginTop={5}>
             <Button
